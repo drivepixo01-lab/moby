@@ -1,6 +1,6 @@
-import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import path from "path";
 
 export default defineConfig({
   plugins: [react()],
@@ -10,9 +10,12 @@ export default defineConfig({
     },
   },
   build: {
-    chunkSizeWarningLimit: 5000,
+    outDir: "dist",
+    sourcemap: false,
+    chunkSizeWarningLimit: 1000,
   },
   server: {
-    allowedHosts: true,
+    port: 5173,
+    open: true,
   },
 });
